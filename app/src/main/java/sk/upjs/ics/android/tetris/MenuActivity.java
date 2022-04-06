@@ -8,12 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 public class MenuActivity extends AppCompatActivity {
-    private LinearLayout instructions;
-    private LinearLayout menu;
-
+    private ImageButton helpBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +22,14 @@ public class MenuActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        instructions = (LinearLayout) findViewById(R.id.instructions);
-        menu = (LinearLayout) findViewById(R.id.menu);
+        helpBtn = (ImageButton) findViewById(R.id.help_lb);
 
+        helpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PopActivity.class));
+            }
+        });
     }
 
 
@@ -41,14 +45,5 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     //show and hide instructions
-    public void instructions(View view){
-        if (instructions.getVisibility() == View.GONE){
-            instructions.setVisibility(View.VISIBLE);
-            menu.setVisibility(View.GONE);
-        }
-        else{
-            instructions.setVisibility(View.GONE);
-            menu.setVisibility(View.VISIBLE);
-        }
-    }
+
 }

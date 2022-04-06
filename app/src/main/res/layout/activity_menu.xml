@@ -44,29 +44,6 @@
             android:background="@drawable/ic_settings" />
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/instructions"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:visibility="gone">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
-            android:layout_height="550dp"
-            app:cardCornerRadius="8dp"
-            android:backgroundTint="#7d46ea"
-            android:elevation="10dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/instructions"/>
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/menu"
