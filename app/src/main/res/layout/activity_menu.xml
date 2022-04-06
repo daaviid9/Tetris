@@ -26,12 +26,12 @@
             android:id="@+id/help_lb"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_toLeftOf="@id/settings_lb"
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
-            android:backgroundTint="@color/black"
+            android:layout_toLeftOf="@id/settings_lb"
             android:background="@drawable/ic_help"
-            />
+            android:onClick="instructions"
+            android:backgroundTint="@color/black" />
 
         <ImageButton
             android:id="@+id/settings_lb"
@@ -45,6 +45,31 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/instructions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="350dp"
+            android:layout_height="550dp"
+            app:cardCornerRadius="8dp"
+            android:backgroundTint="#7d46ea"
+            android:elevation="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/instructions"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -90,5 +115,6 @@
             android:backgroundTint="#2fe0f0"
             android:fontFamily="@font/arcadeclassic"/>
     </LinearLayout>
+
 
 </LinearLayout>
