@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".StartActivity"
+    android:background="@drawable/menu_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageButton
+            android:id="@+id/login_lb"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/black"
+            android:background="@drawable/ic_login"/>
+
+
+        <ImageButton
+            android:id="@+id/help_lb"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@id/settings_lb"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/black"
+            android:background="@drawable/ic_help"
+            />
+
+        <ImageButton
+            android:id="@+id/settings_lb"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/black"
+            android:background="@drawable/ic_settings" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tetris"
+            android:textColor="@color/white"
+            android:textSize="90sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/arcadeclassic"/>
+
+        <Button
+            android:id="@+id/startBt"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:gravity="center"
+            android:text="START"
+            android:onClick="startGame"
+            android:textSize="50sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            app:cornerRadius="0dp"
+            android:includeFontPadding="false"
+            android:backgroundTint="#2fe0f0"
+            android:fontFamily="@font/arcadeclassic"/>
+
+        <Button
+            android:id="@+id/quitBt"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="QUIT"
+            android:onClick="quit"
+            android:textSize="50sp"
+            app:cornerRadius="0dp"
+            android:includeFontPadding="false"
+            android:backgroundTint="#2fe0f0"
+            android:fontFamily="@font/arcadeclassic"/>
+    </LinearLayout>
+
+</LinearLayout>
