@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".StartActivity"
-    android:background="@drawable/menu_background">
+    android:background="@drawable/menu_bg">
 
     <RelativeLayout
         android:layout_width="match_parent"
