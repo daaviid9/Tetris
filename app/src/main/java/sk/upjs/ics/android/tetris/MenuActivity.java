@@ -5,6 +5,8 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -13,6 +15,10 @@ import android.widget.LinearLayout;
 
 public class MenuActivity extends AppCompatActivity {
     private ImageButton helpBtn;
+    private ImageButton settingsBtn;
+    private Button startBtn;
+    private Button quitBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,27 +29,64 @@ public class MenuActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         helpBtn = (ImageButton) findViewById(R.id.help_lb);
+        settingsBtn = (ImageButton) findViewById(R.id.settings_lb);
+        startBtn = (Button) findViewById(R.id.startBt);
+        quitBtn = (Button) findViewById(R.id.quitBt);
+
 
         helpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), PopActivity.class));
+
+
+                // button spam protection
+                helpBtn.setClickable(false);
+                final Handler handler = new Handler(Looper.getMainLooper());
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        helpBtn.setClickable(true);
+                    }
+                }, 500);
+            }
+
+
+        });
+
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PopSettingsActivity.class));
+
+
+                // button spam protection
+                settingsBtn.setClickable(false);
+                final Handler handler = new Handler(Looper.getMainLooper());
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        settingsBtn.setClickable(true);
+                    }
+                }, 500);
             }
         });
+
+
+        startBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
+
+        quitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                System.exit(0);
+            }
+        });
+
     }
-
-
-
-
-    public void startGame(View v){
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-    }
-
-    public void quit(View v){
-        finish();
-        System.exit(0);
-    }
-
-    //show and hide instructions
-
 }

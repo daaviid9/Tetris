@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tetris">
         <activity
+            android:name=".PopSettingsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Tetris.PopMe" />
+        <activity
             android:name=".PopActivity"
-            android:theme="@style/Theme.Tetris.PopMe"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Tetris.PopMe" />
         <activity
             android:name=".MenuActivity"
             android:exported="true" />

@@ -68,7 +68,6 @@
             android:layout_height="75dp"
             android:gravity="center"
             android:text="START"
-            android:onClick="startGame"
             android:textSize="50sp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="100dp"
