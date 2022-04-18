@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tetris">
         <activity
-            android:name=".PopSettingsActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Tetris.PopMe" />
+            android:name=".GameOverScreen"
+            android:exported="false" />
         <activity
             android:name=".PopActivity"
             android:exported="true"
             android:theme="@style/Theme.Tetris.PopMe" />
+        <activity
+            android:name=".PopPause"
+            android:exported="true"
+            android:theme="@style/Theme.Tetris.PopMePause" />
         <activity
             android:name=".MenuActivity"
             android:exported="true" />
@@ -31,6 +34,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

@@ -1,7 +1,6 @@
 package sk.upjs.ics.android.tetris;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +10,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
+
 
 public class MenuActivity extends AppCompatActivity {
+    static int option;
     private ImageButton helpBtn;
     private ImageButton settingsBtn;
     private Button startBtn;
@@ -34,11 +34,13 @@ public class MenuActivity extends AppCompatActivity {
         quitBtn = (Button) findViewById(R.id.quitBt);
 
 
+
         helpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), PopActivity.class));
 
+                option = 1;
 
                 // button spam protection
                 helpBtn.setClickable(false);
@@ -51,14 +53,14 @@ public class MenuActivity extends AppCompatActivity {
                 }, 500);
             }
 
-
         });
 
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), PopSettingsActivity.class));
+                startActivity(new Intent(getApplicationContext(), PopActivity.class));
 
+                option = 2;
 
                 // button spam protection
                 settingsBtn.setClickable(false);
@@ -83,8 +85,7 @@ public class MenuActivity extends AppCompatActivity {
         quitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
-                System.exit(0);
+                finishAffinity();
             }
         });
 

@@ -1,18 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@drawable/menu_bg">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="5dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/levelText"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/arcadeclassic"
+            android:gravity="center_vertical"
+            android:text="Level:"
+            android:textColor="#BDBDBD"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/textViewPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/arcadeclassic"
+            android:gravity="center_vertical"
+            android:text="Points:"
+            android:textColor="#BDBDBD"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/relativelayout"
+            android:layout_width="270dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            android:layout_weight="0.3">
+
+            <ImageButton
+                android:id="@+id/rightButton"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_above="@+id/downButton"
+                android:layout_toRightOf="@id/rotateButton"
+                android:background="@drawable/my_button_bg"
+                android:src="@drawable/ic_right" />
+
+            <ImageButton
+                android:id="@+id/downButton"
+                android:layout_width="240dp"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/my_button_bg"
+                android:rotationY="1"
+                android:src="@drawable/ic_down" />
+
+            <ImageButton
+                android:id="@+id/rotateButton"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="7.5dp"
+                android:layout_marginEnd="7.5dp"
+                android:layout_above="@+id/downButton"
+                android:layout_toEndOf="@+id/leftButton"
+                android:background="@drawable/my_button_bg"
+                android:src="@drawable/ic_rotate" />
+
+            <ImageButton
+                android:id="@+id/leftButton"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_above="@+id/downButton"
+                android:background="@drawable/my_button_bg"
+                android:rotation="180"
+                android:src="@drawable/ic_right" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativelayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:layout_weight="0.7">
+
+            <ImageButton
+                android:id="@+id/settingsBtn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="80dp"
+                android:background="@drawable/ic_settings_square" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

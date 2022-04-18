@@ -30,7 +30,6 @@
             android:layout_marginEnd="10dp"
             android:layout_toLeftOf="@id/settings_lb"
             android:background="@drawable/ic_help"
-            android:onClick="instructions"
             android:backgroundTint="@color/black" />
 
         <ImageButton
@@ -49,15 +48,16 @@
         android:id="@+id/menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/menu_tetris">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tetris"
+            android:text="TeTris"
             android:textColor="@color/white"
             android:textSize="90sp"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="80dp"
             android:includeFontPadding="false"
             android:fontFamily="@font/arcadeclassic"/>
@@ -66,30 +66,29 @@
             android:id="@+id/startBt"
             android:layout_width="200dp"
             android:layout_height="75dp"
-            android:gravity="center"
             android:text="START"
             android:textSize="50sp"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="100dp"
-            app:cornerRadius="0dp"
             android:includeFontPadding="false"
-            android:backgroundTint="#2fe0f0"
-            android:fontFamily="@font/arcadeclassic"/>
+            android:fontFamily="@font/arcadeclassic"
+            app:cornerRadius="10dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="2dp"
+            android:backgroundTint="#F1663A"/>
 
         <Button
             android:id="@+id/quitBt"
             android:layout_width="200dp"
             android:layout_height="75dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
             android:layout_marginTop="20dp"
             android:text="QUIT"
-            android:onClick="quit"
             android:textSize="50sp"
-            app:cornerRadius="0dp"
             android:includeFontPadding="false"
-            android:backgroundTint="#2fe0f0"
-            android:fontFamily="@font/arcadeclassic"/>
+            android:fontFamily="@font/arcadeclassic"
+            app:cornerRadius="10dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="2dp"
+            android:backgroundTint="#00000000"/>
     </LinearLayout>
 
 

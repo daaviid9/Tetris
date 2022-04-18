@@ -1,6 +1,6 @@
 package sk.upjs.ics.android.tetris;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static sk.upjs.ics.android.tetris.MenuActivity.option;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,7 +13,12 @@ public class PopActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pop);
+
+        if (option == 1)
+            setContentView(R.layout.activity_pop_help);
+        else if (option == 2)
+            setContentView(R.layout.activity_pop_settings);
+
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

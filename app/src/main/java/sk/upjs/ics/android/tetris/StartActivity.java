@@ -1,6 +1,7 @@
 package sk.upjs.ics.android.tetris;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,16 +14,18 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         //make fullscreen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        //wait 2 seconds before switching to next activity
+        //wait 1.5 seconds before switching to next activity
         Thread thread = new Thread() {
             @Override
             public void run() {
                 try {
-                    sleep(2000);
+                    sleep(1500);
                     startActivity(new Intent(getApplicationContext(), MenuActivity.class));
                     finish();
                 } catch (InterruptedException e) {
