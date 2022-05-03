@@ -7,12 +7,29 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.WindowManager;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 public class PopActivity extends Activity {
+
+    private Switch soundSwitch;
+    private Switch musicSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        soundSwitch = (Switch) findViewById(R.id.sound_switch);
+        musicSwitch = (Switch) findViewById(R.id.music_switch);
+
+        soundSwitch = new Switch(this);
+        soundSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                
+            }
+        });
+
 
         if (option == 1)
             setContentView(R.layout.activity_pop_help);

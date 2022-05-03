@@ -1,20 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pop_bg"
     android:orientation="vertical"
-    android:gravity="center"
+    android:gravity="center_vertical"
     tools:context=".PopActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings"
-        android:textSize="40sp"
+        android:text="SETTINGS"
+        android:fontFamily="@font/arcadeclassic"
+        android:textSize="55sp"
         android:textColor="@color/white"
+        android:layout_marginTop="-20dp"
+        android:layout_gravity="center"
         />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="30dp">
+
+        <TextView
+            android:id="@+id/music_lb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MUSIC"
+            android:fontFamily="@font/arcadeclassic"
+            android:textSize="40sp"
+            android:textColor="@color/white"
+            />
+        <Switch
+            android:id="@+id/music_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/music_lb"
+            android:layout_alignParentEnd="true"
+            android:checked="true"/>
+
+        <TextView
+            android:id="@+id/sound_lb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/arcadeclassic"
+            android:text="SOUND"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+        <Switch
+            android:id="@+id/sound_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/sound_lb"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="60dp"
+            android:checked="true"/>
+
+    </RelativeLayout>
+
 
 </LinearLayout>

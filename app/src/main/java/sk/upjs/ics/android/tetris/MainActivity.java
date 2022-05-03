@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton settingsBtn;
+    private ImageButton pauseBtn;
     private ImageButton rotateButton;
     private ImageButton rightButton;
     private ImageButton downButton;
@@ -25,22 +25,20 @@ public class MainActivity extends AppCompatActivity {
     private Tetris tetris;
     private NextPieceView nextPieceView;
     static boolean pause = false;
-    private MediaPlayer mediaPlayer;
-    private int stopMediaplayer;
+    static MediaPlayer mediaPlayer;
     private GameBoard gameBoard = new GameBoard();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mediaPlayer = new MediaPlayer();
-        try {
-            mediaPlayer.setDataSource( this, Uri.parse("android.resource://sk.upjs.ics.android.tetris/raw/tetris_soundtrack"));
-            mediaPlayer.prepare();
-        } catch (Exception e) {e.printStackTrace();}
 
 
-        settingsBtn = (ImageButton) findViewById(R.id.settingsBtn);
+        mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.tetris_soundtrack);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+
+        pauseBtn = (ImageButton) findViewById(R.id.pauseBtn);
         rotateButton = (ImageButton) findViewById(R.id.rotateButton);
         rightButton = (ImageButton) findViewById(R.id.rightButton);
         downButton = (ImageButton) findViewById(R.id.downButton);
@@ -61,30 +59,18 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout relativeTetris = (RelativeLayout) findViewById(R.id.relativelayout);
         tetris.setBackgroundColor(Color.parseColor("#4a8a9e"));
         relativeTetris.addView(tetris);
-        settingsBtn.setOnClickListener(new View.OnClickListener() {
 
-            int tmp=0;
+        pause = false;
+        
+        pauseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stopMediaplayer = mediaPlayer.getCurrentPosition();
-                tmp++;
-
                 startActivity(new Intent(getApplicationContext(), PopPause.class));
-
-                if(pause) {
+                if(pause){
                     pause = false;
-                    if(tmp==1) {
-                        mediaPlayer.start();
-                        mediaPlayer.setLooping(true);
-                    } else if(tmp>1) {
-                        mediaPlayer.seekTo(stopMediaplayer);
-                        mediaPlayer.start();
-                    }
                 }
-
-                else if(!pause) {
+                else if(!pause){
                     pause = true;
-                    mediaPlayer.pause();
                 }
             }
         });
@@ -95,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
     public void onRestart() {
         super.onRestart();
         pause = false;
-        mediaPlayer.seekTo(stopMediaplayer);
         mediaPlayer.start();
     }
 
@@ -103,9 +88,7 @@ public class MainActivity extends AppCompatActivity {
     public void onPause() {
         super.onPause();
         pause = true;
-        mediaPlayer.stop();
         mediaPlayer.pause();
-        stopMediaplayer = mediaPlayer.getCurrentPosition();
     }
 
     @Override

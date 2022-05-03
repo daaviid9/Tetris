@@ -40,7 +40,7 @@ public class Tetris extends View implements View.OnClickListener{
         super(context);
 
         this.mainActivity = (MainActivity) context;
-        this.nextPieceView=nextPieceView;
+        this.nextPieceView = nextPieceView;
         this.gameBoard =  gameBoard;
         pause = mainActivity.getPause();
         pieceList = gameBoard.getPieceList();
