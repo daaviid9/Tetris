@@ -1,12 +1,10 @@
 package sk.upjs.ics.android.tetris;
 
 import static sk.upjs.ics.android.tetris.MainActivity.sound;
-import static sk.upjs.ics.android.tetris.PopSettings.prefs;
+import static sk.upjs.ics.android.tetris.MainActivity.prefs;
 
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Point;
-import android.preference.PreferenceManager;
 
 import java.util.ArrayList;
 import java.util.Collections;

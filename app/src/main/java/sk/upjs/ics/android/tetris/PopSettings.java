@@ -14,7 +14,6 @@ public class PopSettings extends Activity {
 
     private Switch soundSwitch;
     private Switch musicSwitch;
-    static SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +24,7 @@ public class PopSettings extends Activity {
         soundSwitch = (Switch) findViewById(R.id.sound_switch);
         musicSwitch = (Switch) findViewById(R.id.music_switch);
 
-        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
 
         if (prefs.getBoolean("sound",true))

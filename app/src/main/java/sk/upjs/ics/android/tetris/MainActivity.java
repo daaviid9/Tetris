@@ -30,13 +30,14 @@ public class MainActivity extends AppCompatActivity {
     static MediaPlayer mediaPlayer;
     static SoundPlayer sound;
     private GameBoard gameBoard = new GameBoard();
+    static SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.tetris_soundtrack);
         mediaPlayer.setLooping(true);
