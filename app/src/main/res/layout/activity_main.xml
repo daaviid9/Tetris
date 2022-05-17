@@ -50,8 +50,8 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="25dp"
-            android:gravity="center_horizontal"
-            android:layout_weight="0.3">
+            android:layout_weight="0.3"
+            android:gravity="center_horizontal">
 
             <ImageButton
                 android:id="@+id/rightButton"
@@ -77,9 +77,9 @@
                 android:id="@+id/rotateButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
+                android:layout_above="@+id/downButton"
                 android:layout_marginStart="7.5dp"
                 android:layout_marginEnd="7.5dp"
-                android:layout_above="@+id/downButton"
                 android:layout_toEndOf="@+id/leftButton"
                 android:background="@drawable/my_button_bg"
                 android:src="@drawable/ic_rotate" />

@@ -1,5 +1,7 @@
 package sk.upjs.ics.android.tetris;
 
+import static sk.upjs.ics.android.tetris.MainActivity.sound;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,7 +18,7 @@ public class GameOverScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over_screen);
-
+        sound.playEnd();
         homeBtn = (ImageButton) findViewById(R.id.home_lb);
         scoreView = (TextView) findViewById(R.id.score_lb);
 
