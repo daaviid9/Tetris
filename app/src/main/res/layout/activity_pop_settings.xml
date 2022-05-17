@@ -35,13 +35,14 @@
             android:textSize="40sp"
             android:textColor="@color/white"
             />
+
         <Switch
             android:id="@+id/music_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/music_lb"
             android:layout_alignParentEnd="true"
-            android:checked="true"/>
+            android:layout_toEndOf="@+id/music_lb"
+            android:checked="true" />
 
         <TextView
             android:id="@+id/sound_lb"
