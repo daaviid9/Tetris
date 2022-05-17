@@ -36,31 +36,31 @@ public class Points {
 
     public void setLevel() {
 
-        if(currentPoints>=20) {
+        if(currentPoints>=200) {
             this.level = 1;
         }
 
-        if(currentPoints>=60) {
+        if(currentPoints>=600) {
             this.level = 2;
         }
 
-        if(currentPoints>=100) {
+        if(currentPoints>=1000) {
             this.level = 3;
         }
 
-        if(currentPoints>=140) {
+        if(currentPoints>=1400) {
             this.level = 4;
         }
 
-        if(currentPoints>=180) {
+        if(currentPoints>=1800) {
             this.level = 5;
         }
 
-        if(currentPoints>=220) {
+        if(currentPoints>=2200) {
             this.level = 6;
         }
 
-        if(currentPoints>=260) {
+        if(currentPoints>=2600) {
             this.level = 7;
         }
     }

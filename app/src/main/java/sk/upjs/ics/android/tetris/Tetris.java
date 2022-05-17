@@ -30,8 +30,8 @@ public class Tetris extends View implements View.OnClickListener{
     private TextView currentLevelTextView;
     private TextView currentPointTextView;
     private Points points;
-    private final int score=10;
-    private int timerPeriod =290;
+    private final int score = 100;
+    private int timerPeriod = 290;
     private int level=0;
     private boolean pause;
 
@@ -80,25 +80,30 @@ public class Tetris extends View implements View.OnClickListener{
 
                             gameBoard.moveDown(gameBoard.getCurrentPiece());
 
+
+
                             if (gameBoard.can_Move_Down(gameBoard.getCurrentPiece()) == false) {
+                                points.setCurrentPoints(points.getCurrentPoints() + 1);
+
                                 int deletedRows = gameBoard.clearRows();
                                 gameBoard.clearRows();
                                 pieceList.remove(gameBoard.getCurrentPiece());
                                 pieceList.add(new Piece(random.nextInt(7) + 1));
                                 nextPieceView.invalidate();
 
-                                if (deletedRows> 0) {
+                                if (deletedRows > 0) {
                                     points.setCurrentPoints(points.getCurrentPoints() + deletedRows * score);
-                                    int p = points.getCurrentPoints();
-                                    points.setLevel();
-
-                                    currentPointTextView.setText("Points: " + p);
-                                    currentLevelTextView.setText("Level: " + points.getLevel());
 
                                     if (points.getLevel() > points.loadHighscore()) {
                                         points.writeHighscore();
                                     }
                                 }
+
+                                points.setLevel();
+
+                                currentPointTextView.setText("Points: " + points.getCurrentPoints());
+                                currentLevelTextView.setText("Level: " + points.getLevel());
+
 
                                 if(points.getLevel()>level) {
                                     level++;
@@ -132,6 +137,7 @@ public class Tetris extends View implements View.OnClickListener{
 
     public void showGameOverScreen() {
         Intent intent = new Intent(this.getContext(), GameOverScreen.class);
+        intent.putExtra("score",points.getCurrentPoints());
         getContext().startActivity(intent);
     }
 

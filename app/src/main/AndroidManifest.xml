@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Tetris">
         <activity
             android:name=".PopHelp"
-            android:exported="false" />
+            android:exported="true"
+            android:theme="@style/Theme.Tetris.PopMe"/>
         <activity
             android:name=".GameOverScreen"
             android:exported="false"

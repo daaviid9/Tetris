@@ -18,11 +18,21 @@
         android:textSize="50sp"
         android:textColor="@color/white"/>
 
+    <TextView
+        android:id="@+id/score_lb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arcadeclassic"
+        android:text="Score: "
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"/>
+
     <ImageButton
         android:id="@+id/home_lb"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/ic_home"/>
 
 </LinearLayout>

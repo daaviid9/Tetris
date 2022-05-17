@@ -293,8 +293,7 @@ turn all pieces until square piece
     }
 
     public boolean checkGameOver(Piece piece) {
-        if(can_Move_Down(piece) == false && piece.getMinXCoordinate(
-                piece.x1, piece.x2, piece.x3, piece.x4)<=1) {
+        if(can_Move_Down(piece) == false && piece.getMinXCoordinate(piece.x1, piece.x2, piece.x3, piece.x4)<=1) {
             return true;
         }
         return false;
