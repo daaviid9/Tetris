@@ -134,7 +134,7 @@ if it can move
         int tmp =0;
 
         if (prefs.getBoolean("sound",true))
-            sound.playDrop();
+            sound.playRotate();
 
         ArrayList<Point> tmpPieceCoordinates = new ArrayList<Point>();
 

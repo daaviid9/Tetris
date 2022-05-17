@@ -1,5 +1,8 @@
 package sk.upjs.ics.android.tetris;
 
+import static sk.upjs.ics.android.tetris.MainActivity.prefs;
+import static sk.upjs.ics.android.tetris.MainActivity.sound;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -92,6 +95,9 @@ public class Tetris extends View implements View.OnClickListener{
                                 nextPieceView.invalidate();
 
                                 if (deletedRows > 0) {
+                                    if (prefs.getBoolean("sound",true))
+                                        sound.playRow();
+
                                     points.setCurrentPoints(points.getCurrentPoints() + deletedRows * score);
 
                                     if (points.getLevel() > points.loadHighscore()) {
