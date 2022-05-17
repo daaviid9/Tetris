@@ -10,11 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tetris">
         <activity
+            android:name=".PopHelp"
+            android:exported="false" />
+        <activity
             android:name=".GameOverScreen"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".PopActivity"
+            android:name=".PopSettings"
             android:exported="true"
             android:theme="@style/Theme.Tetris.PopMe" />
         <activity
@@ -24,11 +27,11 @@
         <activity
             android:name=".MenuActivity"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".StartActivity"
             android:exported="true"
@@ -38,7 +41,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

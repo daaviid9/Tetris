@@ -140,12 +140,8 @@ public class Tetris extends View implements View.OnClickListener{
     */
     @Override
     protected void onDraw(Canvas canvas) {
-
         super.onDraw(canvas);
         Paint paint = new Paint();
-
-
-
 
         for (int x = 0; x < gameBoard.getBoardHeight(); x++) {
             for (int y = 0; y < gameBoard.getBoardWidth(); y++) {

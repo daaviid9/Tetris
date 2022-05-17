@@ -13,7 +13,6 @@ import android.widget.ImageButton;
 
 
 public class MenuActivity extends AppCompatActivity {
-    static int option;
     private ImageButton helpBtn;
     private ImageButton settingsBtn;
     private Button startBtn;
@@ -38,9 +37,8 @@ public class MenuActivity extends AppCompatActivity {
         helpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), PopActivity.class));
+                startActivity(new Intent(getApplicationContext(), PopHelp.class));
 
-                option = 1;
 
                 // button spam protection
                 helpBtn.setClickable(false);
@@ -58,9 +56,8 @@ public class MenuActivity extends AppCompatActivity {
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), PopActivity.class));
+                startActivity(new Intent(getApplicationContext(), PopSettings.class));
 
-                option = 2;
 
                 // button spam protection
                 settingsBtn.setClickable(false);

@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 
 public class Points {
 
-    private int currentPoints =0;
+    private int currentPoints = 0;
     private MainActivity mainActivity;
     private int level = 0;
 

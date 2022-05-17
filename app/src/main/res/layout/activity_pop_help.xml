@@ -7,7 +7,7 @@
     android:background="@drawable/pop_bg"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".PopActivity">
+    tools:context=".PopSettings">
 
     <TextView
         android:layout_width="wrap_content"

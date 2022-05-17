@@ -1,7 +1,5 @@
 package sk.upjs.ics.android.tetris;
 
-import static sk.upjs.ics.android.tetris.MenuActivity.option;
-
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,10 +10,11 @@ import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
-public class PopActivity extends Activity {
+public class PopSettings extends Activity {
 
     private Switch soundSwitch;
     private Switch musicSwitch;
+    static SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +25,13 @@ public class PopActivity extends Activity {
         soundSwitch = (Switch) findViewById(R.id.sound_switch);
         musicSwitch = (Switch) findViewById(R.id.music_switch);
 
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        soundSwitch = new Switch(this);
-            soundSwitch.setChecked(false);
+
+        if (prefs.getBoolean("sound",true))
+            soundSwitch.setChecked(true);
+        else soundSwitch.setChecked(false);
+        
         soundSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -42,31 +44,18 @@ public class PopActivity extends Activity {
             }
         });
 
-        musicSwitch = new Switch(this);
-        musicSwitch.setChecked(false);
-        /*
-        if (prefs.getBoolean("music",true)){
+
+        if (prefs.getBoolean("music",true))
             musicSwitch.setChecked(true);
-            System.out.println("OMG");
-        }
         else musicSwitch.setChecked(false);
 
-         */
         musicSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                System.out.println("CHANGE");
-                System.out.println("CHANGE");
-                if (musicSwitch.isChecked()){
+                if (musicSwitch.isChecked())
                     prefs.edit().putBoolean("music", true).commit();
-                    System.out.println("MUSIC ON");
-                    System.out.println("MUSIC ON");
-                }
-                else {
+                else
                     prefs.edit().putBoolean("music", false).commit();
-                    System.out.println("MUSIC OFF");
-                    System.out.println("MUSIC OFF");
-                }
             }
         });
 

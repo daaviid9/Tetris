@@ -1,7 +1,13 @@
 package sk.upjs.ics.android.tetris;
 
+import static sk.upjs.ics.android.tetris.MainActivity.sound;
+import static sk.upjs.ics.android.tetris.PopSettings.prefs;
+
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.preference.PreferenceManager;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -14,6 +20,9 @@ public class GameBoard {
     private final Random random = new Random();
     private ArrayList<Piece> pieceList = new ArrayList<Piece>();
     private final int number_of_Pieces = 7;
+
+
+
 
     public GameBoard() {
         pieceList.add(new Piece(random.nextInt(number_of_Pieces)+1));
@@ -125,6 +134,10 @@ if it can move
 
     private boolean piece_Can_Rotate(Piece currentPiece) {
         int tmp =0;
+
+        if (prefs.getBoolean("sound",true))
+            sound.playDrop();
+
         ArrayList<Point> tmpPieceCoordinates = new ArrayList<Point>();
 
         Piece tmpStein = new Piece(currentPiece);
@@ -211,6 +224,9 @@ if it can move
 
     public void fastDrop(Piece currentPiece) {
         deletePiece(currentPiece);
+
+        if (prefs.getBoolean("sound",true))
+            sound.playFastDrop();
 
         while(can_Move_Down(currentPiece)==true) {
             moveDown(currentPiece);

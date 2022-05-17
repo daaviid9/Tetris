@@ -1,10 +1,12 @@
 package sk.upjs.ics.android.tetris;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private NextPieceView nextPieceView;
     static boolean pause = false;
     static MediaPlayer mediaPlayer;
+    static SoundPlayer sound;
     private GameBoard gameBoard = new GameBoard();
 
     @Override
@@ -33,10 +36,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.tetris_soundtrack);
         mediaPlayer.setLooping(true);
-        mediaPlayer.start();
+        mediaPlayer.setVolume(0.3f,0.3f);
+        if (prefs.getBoolean("music",true))
+            mediaPlayer.start();
+
+        sound = new SoundPlayer(this);
 
         pauseBtn = (ImageButton) findViewById(R.id.pauseBtn);
         rotateButton = (ImageButton) findViewById(R.id.rotateButton);
