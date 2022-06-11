@@ -15,26 +15,20 @@
         <entry key="..\:/Android/AndroidStudioProjects/Tetris/app/src/main/res/layout/activity_menu.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/Tetris/app/src/main/res/layout/activity_pop.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/Tetris/app/src/main/res/layout/activity_pop_help.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/Tetris/app/src/main/res/layout/activity_pop_log_in.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/AndroidStudioProjects/Tetris/app/src/main/res/layout/activity_pop_pause.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/Tetris/app/src/main/res/layout/activity_pop_register.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/AndroidStudioProjects/Tetris/app/src/main/res/layout/activity_pop_settings.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/Tetris/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/AndroidStudioProjects/Tetris/app/src/main/res/layout/activity_start.xml" value="0.358695652173913" />
-        <entry key="..\:/Android/Tetris/app/src/main/res/drawable/ic_down.xml" value="0.124" />
-        <entry key="..\:/Android/Tetris/app/src/main/res/drawable/ic_pause.xml" value="0.124" />
         <entry key="..\:/Android/Tetris/app/src/main/res/drawable/menu_bg.xml" value="0.2703125" />
         <entry key="..\:/Android/Tetris/app/src/main/res/drawable/pop_bg.xml" value="0.14635416666666667" />
-        <entry key="..\:/Android/Tetris/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Android/Tetris/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
         <entry key="..\:/Android/Tetris/app/src/main/res/layout/activity_menu.xml" value="0.2" />
         <entry key="..\:/Android/Tetris/app/src/main/res/layout/activity_pop.xml" value="0.13020833333333334" />
         <entry key="..\:/Android/Tetris/app/src/main/res/layout/activity_pop_settings.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/Tetris/app/src/main/res/layout/activity_start.xml" value="0.23324275362318841" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Tetrisus/app/src/main/res/drawable/tetris.xml" value="0.22" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Tetrisus/app/src/main/res/layout/activity_game_over_screen.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Tetrisus/app/src/main/res/layout/activity_main.xml" value="0.15897435897435896" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Tetrisus/app/src/main/res/layout/activity_menu.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Tetrisus/app/src/main/res/layout/activity_pop_help.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Tetrisus/app/src/main/res/layout/activity_pop_log_in.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Tetrisus/app/src/main/res/layout/activity_pop_register.xml" value="0.1791907514450867" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Tetrisus/app/src/main/res/layout/activity_register.xml" value="0.36102564102564105" />
+        <entry key="..\:/PMA/Tetris/app/src/main/res/layout/activity_main.xml" value="0.28894927536231885" />
       </map>
     </option>
   </component>
