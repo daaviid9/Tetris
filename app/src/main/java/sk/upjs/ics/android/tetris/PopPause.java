@@ -14,7 +14,7 @@ import android.widget.Button;
 
 public class PopPause extends Activity {
 
-    private Button quitBtn;
+    private Button menuBtn;
     private Button newGameBtn;
     private Button continuetBtn;
 
@@ -24,7 +24,7 @@ public class PopPause extends Activity {
 
         setContentView(R.layout.activity_pop_pause);
 
-        quitBtn = (Button) findViewById(R.id.quitBt);
+        menuBtn = (Button) findViewById(R.id.menuBt);
         newGameBtn = (Button) findViewById(R.id.newGameBt);
         continuetBtn = (Button) findViewById(R.id.continueBt);
 
@@ -48,10 +48,10 @@ public class PopPause extends Activity {
             }
         });
 
-        quitBtn.setOnClickListener(new View.OnClickListener() {
+        menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finishAffinity();
+                startActivity(new Intent(getApplicationContext(), MenuActivity.class));
             }
         });
 

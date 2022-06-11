@@ -19,10 +19,10 @@
         />
 
     <Button
-        android:id="@+id/quitBt"
+        android:id="@+id/menuBt"
         android:layout_width="250dp"
         android:layout_height="80dp"
-        android:text="QUIT"
+        android:text="MENU"
         android:includeFontPadding="false"
         android:fontFamily="@font/arcadeclassic"
         android:textSize="45sp"
