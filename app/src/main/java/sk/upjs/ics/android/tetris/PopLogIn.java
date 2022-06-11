@@ -39,7 +39,7 @@ public class PopLogIn extends AppCompatActivity {
     }
 
     public void goToRegister(View v){
-        setContentView(R.layout.activity_pop_register);
+        setContentView(R.layout.activity_register);
     }
 
     public void backToLogIn(View v){

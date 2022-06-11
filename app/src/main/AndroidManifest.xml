@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tetris">
         <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
             android:name=".PopLogIn"
             android:exported="false"
-            android:theme="@style/Theme.Tetris.PopMe"/>
+            android:theme="@style/Theme.Tetris.PopMe" />
         <activity
             android:name=".PopHelp"
             android:exported="true"
