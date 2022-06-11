@@ -10,9 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tetris">
         <activity
+            android:name=".ResetPassword"
+            android:exported="false"
+            android:theme="@style/Theme.Tetris.PopMe" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tetris.PopMee" />
+        <activity
             android:name=".Register"
             android:exported="false"
-            android:theme="@style/Theme.Tetris.PopMe"/>
+            android:theme="@style/Theme.Tetris.PopMe" />
         <activity
             android:name=".PopLogIn"
             android:exported="false"

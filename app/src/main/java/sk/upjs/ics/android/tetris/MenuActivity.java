@@ -11,6 +11,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class MenuActivity extends AppCompatActivity {
     private ImageButton helpBtn;
