@@ -12,23 +12,23 @@
         android:id="@+id/bannerDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOG IN"
-        android:textStyle="bold"
-        android:textColor="@color/white"
+        android:text="REGISTER"
         android:textAlignment="center"
         android:textSize="38sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:layout_marginTop="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"/>
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/nick"
         android:layout_width="240dp"
         android:layout_height="53dp"
         android:layout_marginTop="60dp"
         android:ems="10"
-        android:hint="E-mail address"
+        android:hint="Nickname"
         android:inputType="text"
         android:textSize="24sp"
         android:textColorHint="@color/white"
@@ -37,7 +37,21 @@
         app:layout_constraintTop_toBottomOf="@id/bannerDescription" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/emailRegister"
+        android:layout_width="240dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="E-mail address"
+        android:inputType="text"
+        android:textSize="24sp"
+        android:textColorHint="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nick" />
+
+    <EditText
+        android:id="@+id/passwordRegister"
         android:layout_width="240dp"
         android:layout_height="53dp"
         android:layout_marginTop="30dp"
@@ -48,46 +62,34 @@
         android:textColorHint="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/email" />
+        app:layout_constraintTop_toBottomOf="@id/emailRegister" />
     <Button
-        android:id="@+id/signIn"
+        android:id="@+id/registerBtn"
         android:layout_width="280dp"
         android:layout_height="70dp"
         android:layout_marginTop="24dp"
-        android:text="Login"
+        android:text="Register"
         android:backgroundTint="#0ED689"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password" />
+        app:layout_constraintTop_toBottomOf="@id/passwordRegister" />
 
     <TextView
-        android:id="@+id/forgotPassword"
+        android:id="@+id/backToLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="24dp"
-        android:text="Forgot password?"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="8dp"
+        android:onClick="backToLogIn"
+        android:text="I already have an account"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signIn" />
-
-    <TextView
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="52dp"
-        android:text="Register"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:onClick="goToRegister"
-        app:layout_constraintLeft_toRightOf="@id/forgotPassword"
-        app:layout_constraintTop_toTopOf="@id/forgotPassword" />
+        app:layout_constraintTop_toBottomOf="@id/registerBtn" />
 
     <ProgressBar
         android:id="@+id/progressBar"
