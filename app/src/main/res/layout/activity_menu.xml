@@ -16,10 +16,10 @@
             android:id="@+id/login_lb"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="10dp"
             android:layout_centerVertical="true"
-            android:backgroundTint="@color/black"
-            android:background="@drawable/ic_login"/>
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_login"
+            android:backgroundTint="@color/black" />
 
 
         <ImageButton

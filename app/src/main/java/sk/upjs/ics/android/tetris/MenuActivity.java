@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 public class MenuActivity extends AppCompatActivity {
     private ImageButton helpBtn;
     private ImageButton settingsBtn;
+    private ImageButton loginBtn;
     private Button startBtn;
     private Button quitBtn;
 
@@ -29,6 +30,7 @@ public class MenuActivity extends AppCompatActivity {
 
         helpBtn = (ImageButton) findViewById(R.id.help_lb);
         settingsBtn = (ImageButton) findViewById(R.id.settings_lb);
+        loginBtn = (ImageButton) findViewById(R.id.login_lb);
         startBtn = (Button) findViewById(R.id.startBt);
         quitBtn = (Button) findViewById(R.id.quitBt);
 
@@ -58,6 +60,23 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), PopSettings.class));
 
+
+                // button spam protection
+                settingsBtn.setClickable(false);
+                final Handler handler = new Handler(Looper.getMainLooper());
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        settingsBtn.setClickable(true);
+                    }
+                }, 500);
+            }
+        });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PopLogIn.class));
 
                 // button spam protection
                 settingsBtn.setClickable(false);
