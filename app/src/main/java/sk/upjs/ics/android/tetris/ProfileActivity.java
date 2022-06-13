@@ -22,8 +22,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 public class ProfileActivity extends AppCompatActivity {
     private Button logout;
+    private TextView username;
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
@@ -47,7 +50,12 @@ public class ProfileActivity extends AppCompatActivity {
         params.y = -20;
 
         getWindow().setAttributes(params);
+
+
+        username = (TextView) findViewById(R.id.username);
         logout = (Button) findViewById(R.id.signOut);
+
+
         user= FirebaseAuth.getInstance().getCurrentUser();
         reference= FirebaseDatabase.getInstance().getReference("Users");
         userID= user.getUid();
@@ -59,7 +67,6 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        final TextView banner= (TextView) findViewById(R.id.bannerDescription);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -69,7 +76,7 @@ public class ProfileActivity extends AppCompatActivity {
                 if (userprofile!=null){
                     String nick= userprofile.meno;
 
-                    banner.setText("Welcome, "+ nick +"!");
+                    username.setText(nick);
                 }
             }
 
