@@ -16,7 +16,7 @@
         <activity
             android:name=".ProfileActivity"
             android:exported="false"
-            android:theme="@style/Theme.Tetris.PopMee" />
+            android:theme="@style/Theme.Tetris.PopMe" />
         <activity
             android:name=".Register"
             android:exported="false"

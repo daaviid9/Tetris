@@ -28,7 +28,8 @@
         android:layout_height="wrap_content"
         android:width="160sp"
         android:height="80sp"
-        android:backgroundTint="#FF5722"
+        android:textStyle="bold"
+        android:backgroundTint="#0ED689"
         android:text="LogOut"
         android:textSize="20sp"
 

@@ -22,13 +22,6 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Tetris.PopMee">
-        <item name ="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowCloseOnTouchOutside">true</item>
-        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
-    </style>
-
     <style name="Theme.Tetris.PopMePause">
         <item name ="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
