@@ -8,10 +8,10 @@ public class User {
 
     }
 
-    public User(String meno, String email){
+    public User(String meno, String email, int score){
         this.meno= meno;
         this.email= email;
+        this.score = score;
     }
-
 
 }

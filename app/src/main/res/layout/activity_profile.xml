@@ -12,12 +12,14 @@
         android:id="@+id/bannerDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/arcadeclassic"
         android:text="Welcome!"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="38sp"
+        android:textSize="50sp"
         android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,31 +29,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="name"
+        android:fontFamily="@font/arcadeclassic"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="38sp"
+        android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/bannerDescription" />
 
 
+    <TextView
+        android:id="@+id/highscore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="Highscore: "
+        android:fontFamily="@font/arcadeclassic"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/username" />
+
     <Button
         android:id="@+id/signOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
         android:width="160sp"
         android:height="80sp"
-        android:textStyle="bold"
         android:backgroundTint="#0ED689"
+        android:fontFamily="@font/arcadeclassic"
         android:text="LogOut"
-        android:textSize="20sp"
+        android:textSize="25sp"
 
-        android:layout_marginBottom="50sp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/highscore" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

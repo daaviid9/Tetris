@@ -122,7 +122,7 @@ public class Register extends Activity  {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()){
-                            User user = new User( meno, email);
+                            User user = new User(meno, email, 0);
                             FirebaseDatabase.getInstance().getReference("Users")
                              .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -132,6 +132,8 @@ public class Register extends Activity  {
                                     if (task.isSuccessful()){
                                         Toast.makeText(Register.this, "User has been registered succesfully!", Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
+                                        finish();
+                                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                                     }else{
                                         Toast.makeText(Register.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);

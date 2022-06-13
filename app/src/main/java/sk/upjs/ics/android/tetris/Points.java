@@ -22,21 +22,6 @@ public class Points {
     }
 
     public void writeHighscore() {
-        FirebaseDatabase.getInstance().getReference().child("Users").push()
-                .setValue(level)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(mainActivity.getApplicationContext(), "Data inserted", Toast.LENGTH_LONG);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(mainActivity.getApplicationContext(), "Data not inserted", Toast.LENGTH_LONG);
-                    }
-                });
-
         SharedPreferences pref = mainActivity.getSharedPreferences("GAME",0);
         SharedPreferences.Editor editor = pref.edit();
         editor.putInt("HIGHSCORE", level);

@@ -26,7 +26,7 @@ import org.w3c.dom.Text;
 
 public class ProfileActivity extends AppCompatActivity {
     private Button logout;
-    private TextView username;
+    private TextView username, highscore;
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
@@ -53,12 +53,14 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         username = (TextView) findViewById(R.id.username);
+        highscore = (TextView) findViewById(R.id.highscore);
         logout = (Button) findViewById(R.id.signOut);
 
 
         user= FirebaseAuth.getInstance().getCurrentUser();
         reference= FirebaseDatabase.getInstance().getReference("Users");
         userID= user.getUid();
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,8 +77,10 @@ public class ProfileActivity extends AppCompatActivity {
 
                 if (userprofile!=null){
                     String nick= userprofile.meno;
+                    int score= userprofile.score;
 
                     username.setText(nick);
+                    highscore.append(String.valueOf(score));
                 }
             }
 

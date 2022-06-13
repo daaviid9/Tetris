@@ -80,8 +80,8 @@ public class MenuActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseUser skuska = auth.getCurrentUser();
-                if (skuska!=null){
+                FirebaseUser firuser = auth.getCurrentUser();
+                if (firuser!=null){
                     startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                 }else {
                     startActivity(new Intent(getApplicationContext(), PopLogIn.class));
