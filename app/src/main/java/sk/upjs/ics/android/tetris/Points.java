@@ -2,6 +2,14 @@ package sk.upjs.ics.android.tetris;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Points {
 
@@ -14,6 +22,21 @@ public class Points {
     }
 
     public void writeHighscore() {
+        FirebaseDatabase.getInstance().getReference().child("Users").push()
+                .setValue(level)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(mainActivity.getApplicationContext(), "Data inserted", Toast.LENGTH_LONG);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(mainActivity.getApplicationContext(), "Data not inserted", Toast.LENGTH_LONG);
+                    }
+                });
+
         SharedPreferences pref = mainActivity.getSharedPreferences("GAME",0);
         SharedPreferences.Editor editor = pref.edit();
         editor.putInt("HIGHSCORE", level);
