@@ -11,6 +11,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 
@@ -20,7 +22,7 @@ public class MenuActivity extends AppCompatActivity {
     private ImageButton loginBtn;
     private Button startBtn;
     private Button quitBtn;
-
+    private FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +37,7 @@ public class MenuActivity extends AppCompatActivity {
         loginBtn = (ImageButton) findViewById(R.id.login_lb);
         startBtn = (Button) findViewById(R.id.startBt);
         quitBtn = (Button) findViewById(R.id.quitBt);
-
+        auth= FirebaseAuth.getInstance();
 
 
         helpBtn.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +80,12 @@ public class MenuActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), PopLogIn.class));
+                FirebaseUser skuska = auth.getCurrentUser();
+                if (skuska!=null){
+                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                }else {
+                    startActivity(new Intent(getApplicationContext(), PopLogIn.class));
+                }
 
                 // button spam protection
                 settingsBtn.setClickable(false);
