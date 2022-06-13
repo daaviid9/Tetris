@@ -3,6 +3,7 @@ package sk.upjs.ics.android.tetris;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Patterns;
@@ -12,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +24,7 @@ public class ResetPassword extends AppCompatActivity {
 
     private EditText email;
     private Button resetpassword;
+    private TextView backToLogin;
     private ProgressBar progressBar;
 
     FirebaseAuth auth;
@@ -49,6 +52,15 @@ public class ResetPassword extends AppCompatActivity {
         resetpassword= (Button) findViewById(R.id.resetpassword);
         progressBar=(ProgressBar) findViewById(R.id.progressBar);
         auth= FirebaseAuth.getInstance();
+        backToLogin = (TextView) findViewById(R.id.backToLogIn);
+
+        backToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), PopLogIn.class));
+            }
+        });
 
     }
     public void reset(View view){
